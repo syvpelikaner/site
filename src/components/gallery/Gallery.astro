@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<section class="grid grid-cols-3 gap-2 h-full">
+  <!-- {
+    projects.map(({ slug, data }) => (
+      <div class="bg-white border-2 col-span-2">
+        <a href={slug}>{/* <img src={data.img} alt={data.title} /> */}</a>
+      </div>
+    ))
+  } -->
+  <div
+    class="bg-white border-2 col-span-1 h-48 cursor-pointer hover:scale-105 transition-transform"
+  >
+    <a href="/dice" }>{/* <img src={data.img} alt={data.title} /> */}</a>
+  </div>
+  <div
+    class="bg-white border-2 col-span-2 h-48 cursor-pointer hover:scale-105 transition-transform"
+  >
+    <a href="/space-invaders" }
+      >{/* <img src={data.img} alt={data.title} /> */}</a
+    >
+  </div>
+  <div
+    class="bg-white border-2 col-span-2 h-48 cursor-pointer hover:scale-105 transition-transform"
+  >
+    <a href="/login-example" }
+      >{/* <img src={data.img} alt={data.title} /> */}</a
+    >
+  </div>
+  <div
+    class="bg-white border-2 col-span-1 h-48 cursor-pointer hover:scale-105 transition-transform"
+  >
+  </div>
+  <div
+    class="bg-white border-2 col-span-1 h-48 cursor-pointer hover:scale-105 transition-transform"
+  >
+  </div>
+  <div
+    class="bg-white border-2 col-span-2 h-48 cursor-pointer hover:scale-105 transition-transform"
+  >
+  </div>
+</section>

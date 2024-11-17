@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.loginContainer {
+  max-width: 400px;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+}

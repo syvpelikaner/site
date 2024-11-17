@@ -1,0 +1,16 @@
+---
+interface Props {
+  slug: string;
+  img: string;
+  title: string;
+}
+
+const { slug, img, title } = Astro.props;
+---
+
+<div
+  class="bg-white border-2 col-span-1 h-48 cursor-pointer hover:scale-105 transition-transform"
+>
+  <a href={slug} }>{/* <img src={data.img} alt={data.title} /> */}</a>
+</div>
+<div

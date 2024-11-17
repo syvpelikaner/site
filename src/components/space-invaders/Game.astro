@@ -1,0 +1,28 @@
+---
+
+---
+
+<div class="container">
+  <canvas id="game" width="600" height="600"></canvas>
+</div>
+<script>
+  import { startGame } from "./game";
+  import { post } from "./post";
+
+  const glCanvas = document.getElementById("game");
+  const offscreenCanvas = new OffscreenCanvas(600, 600);
+
+  if (!(glCanvas instanceof HTMLCanvasElement)) {
+    throw new Error("Failed to run game");
+  }
+
+  startGame(offscreenCanvas);
+  post(glCanvas, offscreenCanvas);
+</script>
+<style>
+  .container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+</style>

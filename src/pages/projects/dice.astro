@@ -1,0 +1,8 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import { Dice as DiceComponent } from "../../components/solid/dice/dice";
+---
+
+<MainLayout title="Dice">
+  <DiceComponent client:only="solid" />
+</MainLayout>
