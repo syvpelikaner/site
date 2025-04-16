@@ -1,0 +1,21 @@
+---
+export interface Props {
+  title: string;
+  company: string;
+  date: string;
+  description: string;
+}
+const { title, company, date, description } = Astro.props;
+---
+
+<div class="mb-8">
+  <h3 class="text-2xl font-bold">{title}</h3>
+  <div class="flex justify-between items-center text-neutral-content text-sm">
+    <span>{date}</span>
+    <span>{company}</span>
+  </div>
+  <p class="mt-2 text-base-content">
+    {description}
+  </p>
+  <p class="mt-1 text-neutral-content">Madrid, Moscow, On-site</p>
+</div>

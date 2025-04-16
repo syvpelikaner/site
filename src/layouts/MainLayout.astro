@@ -3,8 +3,13 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Main from "../components/Main.astro";
 
-import "@fontsource/inconsolata";
-import "@fontsource/source-code-pro";
+import "@fontsource/cinzel";
+import "@fontsource/inter";
+
+import cinzelWoff2 from "@fontsource/cinzel/files/cinzel-latin-400-normal.woff2";
+import interWoff2 from "@fontsource/inter/files/inter-latin-400-normal.woff2";
+
+import "../styles/global.css";
 
 export interface Props {
   title: string;
@@ -13,17 +18,29 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-theme="auroraNight">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/site/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={cinzelWoff2}
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      href={interWoff2}
+      crossorigin="anonymous"
+    />
     <title>{title}</title>
   </head>
-  <body
-    class="bg-background dark:bg-dark-background text-primary dark:text-dark-primary"
-  >
+  <body class="bg-background font-inter">
     <Header />
     <Main>
       <slot />
