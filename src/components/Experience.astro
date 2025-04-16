@@ -4,8 +4,9 @@ export interface Props {
   company: string;
   date: string;
   description: string;
+  location: string;
 }
-const { title, company, date, description } = Astro.props;
+const { title, company, date, description, location } = Astro.props;
 ---
 
 <div class="mb-8">
@@ -17,5 +18,5 @@ const { title, company, date, description } = Astro.props;
   <p class="mt-2 text-base-content">
     {description}
   </p>
-  <p class="mt-1 text-neutral-content">Madrid, Moscow, On-site</p>
+  <p class="mt-1 text-neutral-content">{location}</p>
 </div>
