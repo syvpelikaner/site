@@ -1,10 +1,12 @@
 ---
-import Nav from "./Nav.astro";
+import Link from "./Link.astro";
 ---
 
-<header class="flex justify-start items-center h-24 ps-3">
-  <h1 class="font-inconsolata text-primary font-bold tracking-tight text-3xl">
-    Timofei's Playground
-  </h1>
-  <Nav />
+<header class="navbar absolute top-0 left-0 flex w-full px-8 py-4">
+  <nav
+    class="flex w-full font-inconsolata items-center justify-center-safe px-8 gap-2 text-2xl text-shadow-md text-shadow-black"
+  >
+    <Link href="/site/">About me</Link>/
+    <Link href="/site/projects">Projects</Link>
+  </nav>
 </header>

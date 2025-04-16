@@ -1,1 +1,98 @@
 @import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-cinzel: "Cinzel", serif;
+  --font-inter: "Inter", sans-serif;
+}
+
+@plugin "daisyui/theme" {
+  name: "auroraNight";
+  default: true;
+  color-scheme: "dark";
+  --color-base-100: oklch(12% 0.05 260);
+  --color-base-200: oklch(18% 0.06 260);
+  --color-base-300: oklch(25% 0.07 260);
+  --color-base-content: oklch(90% 0.01 240);
+  --color-primary: oklch(65% 0.25 150);
+  --color-primary-content: oklch(95% 0.01 240);
+  --color-secondary: oklch(55% 0.2 300);
+  --color-secondary-content: oklch(95% 0.01 240);
+  --color-accent: oklch(60% 0.3 330);
+  --color-accent-content: oklch(95% 0.01 240);
+  --color-neutral: oklch(20% 0.03 240);
+  --color-neutral-content: oklch(90% 0.01 240);
+  --color-info: oklch(60% 0.2 240);
+  --color-info-content: oklch(95% 0.01 240);
+  --color-success: oklch(65% 0.3 120);
+  --color-success-content: oklch(95% 0.01 240);
+  --color-warning: oklch(65% 0.25 50);
+  --color-warning-content: oklch(95% 0.01 240);
+  --color-error: oklch(60% 0.3 20);
+  --color-error-content: oklch(95% 0.01 240);
+  --radius-selector: 0.25rem;
+  --radius-field: 0rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 1;
+}
+
+@plugin "daisyui/theme" {
+  name: "auroraLight";
+  default: false;
+  color-scheme: "light";
+  --color-base-100: oklch(97% 0.017 320);
+  --color-base-200: oklch(95% 0.037 318);
+  --color-base-300: oklch(90% 0.076 319);
+  --color-base-content: oklch(20% 0.02 240);
+  --color-primary: oklch(65% 0.25 150);
+  --color-primary-content: oklch(20% 0.01 240);
+  --color-secondary: oklch(55% 0.2 300);
+  --color-secondary-content: oklch(20% 0.01 240);
+  --color-accent: oklch(60% 0.3 330);
+  --color-accent-content: oklch(20% 0.01 240);
+  --color-neutral: oklch(40% 0.03 240);
+  --color-neutral-content: oklch(20% 0.01 240);
+  --color-info: oklch(60% 0.2 240);
+  --color-info-content: oklch(20% 0.01 240);
+  --color-success: oklch(65% 0.3 120);
+  --color-success-content: oklch(20% 0.01 240);
+  --color-warning: oklch(65% 0.25 50);
+  --color-warning-content: oklch(20% 0.01 240);
+  --color-error: oklch(60% 0.3 20);
+  --color-error-content: oklch(20% 0.01 240);
+  --radius-selector: 0.25rem;
+  --radius-field: 0rem;
+  --radius-box: 1rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 1;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
