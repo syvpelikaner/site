@@ -1,8 +1,12 @@
 ---
+export interface Props {
+  class: string;
+}
 
+const { class: className } = Astro.props as Props;
 ---
 
-<canvas class="w-full h-full" id="aurora-canvas"></canvas>
+<canvas class={className} id="aurora-canvas"></canvas>
 <script>
   import { runAurora } from "./aurora.ts";
 

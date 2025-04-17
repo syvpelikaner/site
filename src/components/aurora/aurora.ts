@@ -68,23 +68,8 @@ export function runAurora(canvas: HTMLCanvasElement) {
   gl.enableVertexAttribArray(0);
   gl.vertexAttribPointer(0, 2, gl.FLOAT, false, 0, 0);
 
-  // Track mouse positions.
   const mousePos = [0, 512, 0, 0];
-  // canvas.addEventListener("mousemove", (e) => {
-  //   const rect = canvas.getBoundingClientRect();
-  //   // WebGL's y=0 is at the bottom.
-  //   mousePos[0] = e.clientX - rect.left;
-  //   mousePos[1] = rect.height - (e.clientY - rect.top);
 
-  //   console.log(`Mouse position: (${mousePos[0]}, ${mousePos[1]})`);
-  // });
-  // canvas.addEventListener("mousedown", (e) => {
-  //   const rect = canvas.getBoundingClientRect();
-  //   mousePos[2] = e.clientX - rect.left;
-  //   mousePos[3] = rect.height - (e.clientY - rect.top);
-  // });
-
-  // Update canvas size and viewport.
   function resizeCanvas() {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
@@ -97,7 +82,6 @@ export function runAurora(canvas: HTMLCanvasElement) {
   window.addEventListener("resize", resizeCanvas);
   resizeCanvas();
 
-  // Animation loop.
   const startTime = performance.now();
   function render() {
     const currentTime = performance.now();
@@ -107,12 +91,10 @@ export function runAurora(canvas: HTMLCanvasElement) {
       return;
     }
 
-    // Update uniforms.
     gl.uniform1f(uTimeLoc, elapsedTime);
     gl.uniform3f(uResLoc, canvas.width, canvas.height, 0.0);
     gl.uniform4f(uMouseLoc, mousePos[0], mousePos[1], mousePos[2], mousePos[3]);
 
-    // Draw the full-screen quad.
     gl.drawArrays(gl.TRIANGLES, 0, 6);
     requestAnimationFrame(render);
   }
