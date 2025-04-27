@@ -1,12 +1,24 @@
 ---
 import Link from "../../components/Link.astro";
 import MainLayout from "../../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import githubIcon from "../../images/github-mark-white.svg";
 ---
 
 <MainLayout title="Projects">
   <div class="container mx-auto p-4 flex flex-col mt-16">
     <Link href="/site/demos/dice">Dice</Link>
     <Link href="/site/demos/space-invaders">Space invaders</Link>
+    <Link
+      href="https://github.com/syvpelikaner/effector-undo"
+      class="flex items-center"
+    >
+      effector-undo <Image
+        class="w-4 h-4 ml-2"
+        src={githubIcon}
+        alt="github"
+      /></Link
+    >
     <!-- <Link href="/site/demos/login-example">Login example</Link> -->
   </div>
 </MainLayout>

@@ -1,13 +1,13 @@
 ---
 import Aurora from "../aurora/Aurora.astro";
 import { Image } from "astro:assets";
-import pusaSvg from "./pusa.svg";
+import pusaSvg from "../../images/pusa.svg";
 ---
 
 <div class="hero min-h-fit">
   <Aurora class="h-full w-full z-0" />
   <div class="flex flex-col items-center justify-center p-2 z-1">
-    <Image class="mt-16" src={pusaSvg} alt="" />
+    <Image class="mt-16" src={pusaSvg} alt="Pusa mascot" />
     <h1
       class="font-cinzel font-bold tracking-tight lg:text-6xl text-3xl text-shadow-md text-shadow-black"
     >
